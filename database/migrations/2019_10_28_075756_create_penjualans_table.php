@@ -14,13 +14,13 @@ class CreatePenjualansTable extends Migration
     public function up()
     {
         Schema::create('penjualans', function (Blueprint $table) {
-            $table->string('id_penjualan', 10)->primary();
+            $table->bigIncrements('id');
             $table->integer('jumlah_pembelian');
             $table->integer('satuan');
             $table->integer('total');
             $table->integer('potongan_manual');
             $table->unsignedBigInteger('id_barang');
-            $table->string('id_promo');
+            $table->unsignedBigInteger('id_promo');
             $table->timestamps();
         });
     }

@@ -14,7 +14,7 @@ class CreateKeperluansTable extends Migration
     public function up()
     {
         Schema::create('keperluans', function (Blueprint $table) {
-            $table->string('id_keperluan', 10);
+            $table->bigIncrements('id');
             $table->string('jenis_keperluan');
             $table->bigInteger('biaya_keluar');
             $table->timestamps();

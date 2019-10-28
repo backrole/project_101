@@ -14,7 +14,8 @@ class CreateBarangsTable extends Migration
     public function up()
     {
         Schema::create('barangs', function (Blueprint $table) {
-            $table->bigInteger('id_barangs')->primary();
+            $table->bigIncrements('id');
+            $table->bigInteger('id_barang');
             $table->string('nama_barang');
             $table->integer('stock_grosir');
             $table->integer('stock_retail');
@@ -22,7 +23,7 @@ class CreateBarangsTable extends Migration
             $table->integer('harga_retail');
             $table->integer('isi_per_box');
             $table->string('status_pembayaran');
-            $table->string('id_supplier');
+            $table->unsignedBigInteger('id_supplier');
             $table->timestamps();
         });
     }
